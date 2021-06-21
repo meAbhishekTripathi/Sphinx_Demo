@@ -1154,8 +1154,8 @@ Then use a backend-to-backend JSON workflow for the payment process.
 
 3. **Submit the payment:** The consumer fills in the payment form. Use the WPP.seamlessSubmit function to submit the payment. Ensure that the function is bound to an interactive UI element, such as a button, in your HTML code.
 
-3.3D Secure credit card payment automatically redirects the consumer to the authentication page, and then to a WPP v2 success- or fail-redirect-url. Include the success- and fail-redirect-urls in your initial request! This page includes a JSON sample for 3D Secure credit card payment.
+  - **3D Secure credit card payment** automatically redirects the consumer to the authentication page, and then to a WPP v2 success- or fail-redirect-url. Include the success- and fail-redirect-urls in your initial request! This page includes a JSON sample for 3D Secure credit card payment.
 
-Non-3D Secure credit card payment requires you to implement redirects to subsequent pages, such as a success-/fail-/cancel-redirect-url to let the consumer know about the payment outcome, by yourself.
+  - **Non-3D Secure credit card payment** requires you to implement redirects to subsequent pages, such as a ``success-/fail-/cancel-redirect-url`` to let the consumer know about the payment outcome, by yourself.
 
-Parse and Process the Payment Response: The payment is processed. WPP v2 returns base64 encoded payment data. It is highly recommended that you parse and process this base64 encoded response to verify the payment.
+4. **Parse and Process the Payment Response:** The payment is processed. WPP v2 returns base64 encoded payment data. It is highly recommended that you parse and process this base64 encoded response to verify the payment.

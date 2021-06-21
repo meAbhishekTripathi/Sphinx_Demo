@@ -16,6 +16,10 @@ import sys, os
 
 sys.path.append(os.path.abspath('exts'))
 
+import sphinx_rtd_theme
+from sphinx_rtd_theme import __version__ as theme_version
+from sphinx_rtd_theme import __version_full__ as theme_version_full
+from sphinx.locale import _
 
 # -- Project information -----------------------------------------------------
 
@@ -49,16 +53,58 @@ language = 'English'
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
+extensions = [
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.viewcode',
+    'sphinx_rtd_theme',
+]
+
+source_suffix = '.rst'
+exclude_patterns = []
+locale_dirs = ['locale/']
+gettext_compact = False
+
+master_doc = 'index'
+suppress_warnings = ['image.nonlocal_uri']
+pygments_style = 'default'
+
+intersphinx_mapping = {
+    'rtd': ('https://docs.readthedocs.io/en/stable/', None),
+    'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
+}
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
 html_theme =  'sphinx_rtd_theme'
+html_theme_options = {
+    'analytics_id': 'G-XXXXXXXXXX',  #  Provided by Google in your dashboard
+    'analytics_anonymize_ip': False,
+    'logo_only': True,
+    'display_version': True,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': False,
+    'vcs_pageview_mode': '',
+    'style_nav_header_background': '#F19A63',
+    # Toc options
+    'collapse_navigation': False,
+    'sticky_navigation': True,
+    'navigation_depth': -1,
+    'includehidden': False,
+    'titles_only': False
+}
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-
+html_js_files = [
+    './html/debug.js',
+]
+#//demo/static/logo-wordmark-light.svg
+#html_logo =  "/_static/Available_on_Github_JAVA.png"
+html_show_sourcelink = True
