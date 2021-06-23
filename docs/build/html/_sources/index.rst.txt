@@ -1159,3 +1159,11 @@ Then use a backend-to-backend JSON workflow for the payment process.
   - **Non-3D Secure credit card payment** requires you to implement redirects to subsequent pages, such as a ``success-/fail-/cancel-redirect-url`` to let the consumer know about the payment outcome, by yourself.
 
 4. **Parse and Process the Payment Response:** The payment is processed. WPP v2 returns base64 encoded payment data. It is highly recommended that you parse and process this base64 encoded response to verify the payment.
+
+First Steps
+^^^^^^^^^^^
+
+Before processing payments in Seamless Mode, you need to make a small adjustment to your checkout page’s HTML code, and change a setting in the Payment Page Designer.
+
+1. Preparing your Checkout Page
+Add the paymentPage.js library to your checkout page HTML code:

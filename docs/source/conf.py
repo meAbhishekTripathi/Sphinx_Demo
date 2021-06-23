@@ -77,9 +77,9 @@ intersphinx_mapping = {
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-#
-html_theme =  'sphinx_rtd_theme'
+# a list of builtin themes.sphinx_rtd_theme
+#pip install sphinx-sizzle-theme
+html_theme =  'sizzle'
 html_theme_options = {
     'analytics_id': 'G-XXXXXXXXXX',  #  Provided by Google in your dashboard
     'analytics_anonymize_ip': False,
@@ -105,6 +105,17 @@ html_static_path = ['_static']
 html_js_files = [
     './html/debug.js',
 ]
+html_js_files = ['js/expand_tabs.js']
 #//demo/static/logo-wordmark-light.svg
 #html_logo =  "/_static/Available_on_Github_JAVA.png"
 html_show_sourcelink = True
+
+extensions = [
+    'sphinx.ext.autosectionlabel',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.intersphinx',
+    #'sphinxcontrib.httpdomain',
+    #'djangodocs',
+    #'doc_extensions',
+
+]
